@@ -126,5 +126,24 @@
                 "valid": false
             }
         ]
+    },
+    {
+        "description": "empty items does not alter the starting index for additionalItems",
+        "schema": {
+            "items": [],
+            "additionalItems": { "type": "integer" }
+        },
+        "tests": [
+            {
+                "description": "valid items",
+                "data": [ 1, 2, 3 ],
+                "valid": true
+            },
+            {
+                "description": "wrong type of first item",
+                "data": [ "x", 1 ],
+                "valid": false
+            }
+        ]
     }
 ]
